@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Noor Attar — Perfumaria Árabe</title>
+<meta name="description" content="Perfumes árabes de nicho: oud, âmbar e almíscar concentrados, direto das rotas de Taif e Damasco.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ===================== STOREFRONT ===================== -->
+<div class="storefront">
+
+  <nav class="na-nav">
+    <div class="wrap">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.2 5.2L19 9l-4.8 1.8L12 16l-2.2-5.2L5 9l4.8-1.8L12 2z" fill="#C9A15C"/></svg>
+        <span class="brand-name">NOOR <b>ATTAR</b></span>
+      </div>
+      <div class="na-links">
+        <a href="#colecao">Coleção</a>
+        <a href="#piramide">Notas Olfativas</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+      </div>
+      <div class="na-actions">
+        <button class="icon-btn" id="openAdminBtn" title="Área do administrador" aria-label="Área do administrador">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="5" y="11" width="14" height="9" rx="1"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>
+        </button>
+        <button class="burger" id="burgerBtn" aria-label="Abrir menu">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-drawer" id="mobileDrawer">
+      <a href="#colecao" class="drawer-link">Coleção</a>
+      <a href="#piramide" class="drawer-link">Notas Olfativas</a>
+      <a href="#sobre" class="drawer-link">Sobre</a>
+      <a href="#contato" class="drawer-link">Contato</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-pattern">
+      <svg viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <pattern id="arabesque" width="60" height="60" patternUnits="userSpaceOnUse">
+            <g stroke="#C9A15C" stroke-width="0.6" fill="none">
+              <circle cx="30" cy="30" r="12"/>
+              <path d="M30 6 L36 24 L54 30 L36 36 L30 54 L24 36 L6 30 L24 24 Z"/>
+            </g>
+          </pattern>
+        </defs>
+        <rect width="400" height="400" fill="url(#arabesque)"/>
+      </svg>
+    </div>
+    <div class="wrap">
+      <div>
+        <div class="hero-eyebrow"><span class="rule"></span><span class="eyebrow">Perfumaria árabe autêntica</span></div>
+        <h1>A essência do <em>Oriente</em>,<br>engarrafada com honra.</h1>
+        <p class="lede">Óleos de oud, âmbar e almíscar selecionados nas rotas de Taif e Damasco. Fragrâncias intensas, de longa duração, para quem não passa despercebido.</p>
+        <div class="hero-ctas">
+          <a href="#colecao" class="btn btn-gold">Explorar coleção</a>
+          <a href="#piramide" class="btn btn-outline">Nossas notas</a>
+        </div>
+      </div>
+      <div class="hero-stage">
+        <div class="stage-glow"></div>
+        <div class="stage-ring"></div>
+        <div class="hero-bottle" id="heroBottleSlot"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- COLLECTIONS QUICK NAV -->
+  <section class="collections" id="collectionsNav">
+    <div class="wrap" id="collectionsWrap"></div>
+  </section>
+
+  <!-- CATALOG -->
+  <section class="sec" id="colecao">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Coleção completa</span>
+        <h2>Perfumes em estoque</h2>
+        <p>Cada frasco é numerado e verificado quanto à pureza dos óleos. Estoque limitado — atualizado em tempo real pela nossa curadoria.</p>
+      </div>
+      <div class="catalog-toolbar">
+        <div class="filters" id="filterChips"></div>
+        <div class="toolbar-right">
+          <div class="search-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+            <input type="text" id="searchInput" placeholder="Buscar por nome...">
+          </div>
+          <select class="sort-select" id="sortSelect">
+            <option value="relevance">Relevância</option>
+            <option value="price-asc">Menor preço</option>
+            <option value="price-desc">Maior preço</option>
+            <option value="name-asc">Nome A-Z</option>
+          </select>
+        </div>
+      </div>
+      <div class="grid" id="catalogGrid"></div>
+    </div>
+  </section>
+
+  <!-- PYRAMID -->
+  <section class="pyramid-sec sec" id="piramide">
+    <div class="wrap">
+      <div class="pyramid-grid">
+        <div class="pyr-visual">
+          <div class="pyr-tier top"><div class="lbl">Notas de topo</div><div class="txt">Bergamota · Açafrão · Cardamomo</div></div>
+          <div class="pyr-tier heart"><div class="lbl">Notas de coração</div><div class="txt">Rosa de Taif · Jasmim · Oud</div></div>
+          <div class="pyr-tier base"><div class="lbl">Notas de fundo</div><div class="txt">Âmbar · Almíscar · Sândalo · Madeira de Oud</div></div>
+        </div>
+        <div class="pyr-copy">
+          <span class="eyebrow">A pirâmide olfativa</span>
+          <h2 class="disp" style="font-size:32px;margin:14px 0 22px;">Como cada frasco se revela</h2>
+          <p>Um perfume árabe autêntico se desenrola em camadas. As notas de topo abrem a experiência nos primeiros minutos; o coração define seu caráter por horas; e a base — geralmente oud e âmbar — é o que permanece na pele até o dia seguinte.</p>
+          <p>Em cada card de produto abaixo, mostramos essa mesma estrutura, para que você escolha pela jornada que a fragrância promete, não apenas pelo nome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="sec" id="sobre">
+    <div class="wrap about-grid">
+      <div>
+        <span class="eyebrow">Nossa casa</span>
+        <h2 style="margin:14px 0 20px;">Tradição destilada à mão</h2>
+        <p style="opacity:.75;font-size:15px;">A Noor Attar nasceu do desejo de trazer os óleos concentrados do Golfo Árabe para quem valoriza fragrâncias com presença real — sem álcool em excesso, sem pressa na maceração. Trabalhamos com pequenos produtores de oud em Taif e destiladores de âmbar em Muscat.</p>
+        <p style="opacity:.75;font-size:15px;">Cada lote é maturado por semanas antes de chegar até você, garantindo a intensidade e a fixação que um verdadeiro attar exige.</p>
+        <div class="about-figures">
+          <div class="figure"><b>+40</b><span>Óleos de oud selecionados</span></div>
+          <div class="figure"><b>100%</b><span>Fragrâncias concentradas</span></div>
+          <div class="figure"><b>12h+</b><span>De fixação média</span></div>
+          <div class="figure"><b>3</b><span>Regiões de origem</span></div>
+        </div>
+      </div>
+      <div class="about-art" id="aboutArtSlot"></div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="wrap news-box">
+      <div>
+        <h3>Receba lançamentos antes de todos</h3>
+        <p>Um e-mail por mês, sem spam — só novos oud e edições limitadas.</p>
+      </div>
+      <form class="news-form" id="newsletterForm">
+        <input type="email" placeholder="seu@email.com" required>
+        <button type="submit">Inscrever</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER / CONTACT -->
+  <footer id="contato">
+    <div class="wrap">
+      <div class="foot-grid">
+        <div class="foot-col">
+          <h4>Noor Attar</h4>
+          <p style="max-width:280px;">Perfumaria árabe de nicho. Óleos concentrados, oud puro e atendimento próximo, feito sob medida para cada cliente.</p>
+        </div>
+        <div class="foot-col">
+          <h4>Contato</h4>
+          <a href="#" id="footWhatsapp">WhatsApp da loja</a>
+          <a href="mailto:contato@noorattar.com">contato@noorattar.com</a>
+        </div>
+        <div class="foot-col">
+          <h4>Loja</h4>
+          <a href="#colecao">Ver coleção</a>
+          <a href="#piramide">Notas olfativas</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© 2026 Noor Attar. Todos os direitos reservados.</span>
+        <button class="admin-link" id="openAdminBtn2">Área administrativa</button>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!-- ===================== END STOREFRONT ===================== -->
+
+
+<!-- ===================== PRODUCT MODAL ===================== -->
+<div class="overlay" id="productOverlay">
+  <div class="modal wide">
+    <button class="modal-close" id="closeProductModal" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <div id="productModalBody"></div>
+  </div>
+</div>
+
+<!-- ===================== ADMIN LOGIN MODAL ===================== -->
+<div class="overlay" id="loginOverlay">
+  <div class="modal">
+    <button class="modal-close" id="closeLoginModal" aria-label="Fechar">
+      <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+    <h3>Acesso administrativo</h3>
+    <p class="sub">Entre com a senha da loja para gerenciar o estoque e os perfumes.</p>
+    <div class="form-err" id="loginErr">Senha incorreta. Tente novamente.</div>
+    <form id="loginForm">
+      <div class="field">
+        <label>Senha</label>
+        <input type="password" id="loginPw" placeholder="••••••••" autocomplete="current-password" required>
+      </div>
+      <button type="submit" class="btn btn-gold full-btn">Entrar</button>
+    </form>
+    <p class="pw-hint">Senha padrão de demonstração: <b>attar2026</b> — troque em <code>js/script.js</code> antes de publicar a loja.</p>
+  </div>
+</div>
+
+<!-- ===================== ADMIN PANEL ===================== -->
+<div class="admin-panel">
+  <div class="admin-topbar">
+    <div class="wrap">
+      <div class="brand">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.2 5.2L19 9l-4.8 1.8L12 16l-2.2-5.2L5 9l4.8-1.8L12 2z" fill="#C9A15C"/></svg>
+        <span class="brand-name">NOOR <b>ATTAR</b> — Painel</span>
+      </div>
+      <div style="display:flex;gap:10px;">
+        <button class="btn btn-outline" id="backToStoreBtn">Voltar à loja</button>
+        <button class="btn btn-wine" id="logoutBtn">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="padding-top:36px;padding-bottom:80px;">
+    <div class="stat-row" id="statRow"></div>
+
+    <div class="admin-tabs">
+      <button class="tab-btn active" data-tab="add">Adicionar perfume</button>
+      <button class="tab-btn" data-tab="manage">Gerenciar estoque</button>
+    </div>
+
+    <!-- ADD / EDIT PRODUCT TAB -->
+    <div id="tabAdd">
+      <div class="form-title-row">
+        <h3 id="formTitle">Novo perfume</h3>
+        <button type="button" class="mini-btn" id="cancelEditBtn" style="display:none;">Cancelar edição</button>
+      </div>
+      <form id="addProductForm" style="max-width:720px;">
+        <div class="form-err" id="addErr"></div>
+        <div class="field-row">
+          <div class="field">
+            <label>Nome do perfume</label>
+            <input type="text" id="fName" placeholder="Ex: Oud Malaki" required>
+          </div>
+          <div class="field">
+            <label>Categoria</label>
+            <select id="fCategory" required>
+              <option value="Oud">Oud</option>
+              <option value="Floral">Floral</option>
+              <option value="Amadeirado">Amadeirado</option>
+              <option value="Âmbar">Âmbar</option>
+              <option value="Doce">Doce</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label>Descrição</label>
+          <textarea id="fDesc" placeholder="Descreva a personalidade do perfume..."></textarea>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Notas de topo</label>
+            <input type="text" id="fTop" placeholder="Ex: Bergamota, Açafrão">
+          </div>
+          <div class="field">
+            <label>Notas de coração</label>
+            <input type="text" id="fHeart" placeholder="Ex: Rosa, Jasmim">
+          </div>
+        </div>
+        <div class="field">
+          <label>Notas de fundo</label>
+          <input type="text" id="fBase" placeholder="Ex: Oud, Âmbar, Almíscar">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label>Preço (R$)</label>
+            <input type="number" id="fPrice" min="0" step="0.01" placeholder="299.90" required>
+          </div>
+          <div class="field">
+            <label>Tamanho</label>
+            <input type="text" id="fSize" placeholder="Ex: 50ml">
+          </div>
+        </div>
+        <div class="field">
+          <label>Quantidade em estoque</label>
+          <input type="number" id="fStock" min="0" step="1" placeholder="12" required>
+        </div>
+        <div class="field">
+          <label>Foto do perfume (opcional — sem foto, usamos um frasco ilustrado)</label>
+          <div class="upload-row">
+            <input type="file" id="fImage" accept="image/*">
+            <img id="fImagePreview" class="thumb-preview" style="display:none;">
+            <button type="button" class="mini-btn" id="removeImageBtn" style="display:none;">Remover foto</button>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-gold full-btn" id="submitProductBtn" style="margin-top:10px;">Cadastrar perfume</button>
+      </form>
+    </div>
+
+    <!-- MANAGE TAB -->
+    <div id="tabManage" style="display:none;">
+      <div style="overflow-x:auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Foto</th><th>Perfume</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Ações</th>
+            </tr>
+          </thead>
+          <tbody id="manageTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- SVG BOTTLE SYMBOL LIBRARY -->
+<svg width="0" height="0" style="position:absolute;">
+  <defs>
+    <symbol id="bottleSymbol" viewBox="0 0 100 180">
+      <rect x="40" y="4" width="20" height="14" rx="2" fill="currentColor" opacity=".9"/>
+      <rect x="44" y="0" width="12" height="6" rx="1" fill="currentColor"/>
+      <path d="M30 18 h40 l6 20 v120 a8 8 0 01-8 8 H32 a8 8 0 01-8-8 V38 Z" fill="none" stroke="currentColor" stroke-width="3"/>
+      <path d="M26 70 h48" stroke="currentColor" stroke-width="1" opacity=".5"/>
+      <path d="M50 55 l4 10 10 4 -10 4 -4 10 -4-10 -10-4 10-4 z" fill="currentColor" opacity=".85"/>
+      <rect x="28" y="120" width="44" height="34" rx="1" fill="currentColor" opacity=".12"/>
+    </symbol>
+  </defs>
+</svg>
+
+<script src="js/script.js" defer></script>
+</body>
+</html>
